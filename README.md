@@ -32,7 +32,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/fuxiangSun/UniPCB.git
+git clone https://github.com/asfx0412/UniPCB.git
 cd UniPCB
 
 # 安装依赖
@@ -195,7 +195,7 @@ UniPCB/
 
 如有问题或建议，请通过以下方式联系：
 - 📧 Email: sfx076@163.com
-- 🐛 Issues: [GitHub Issues](https://github.com/fuxiangSun/UniPCB/issues)
+- 🐛 Issues: [GitHub Issues](https://github.com/asfx0412/UniPCB/issues)
 
 ## 📜 许可证
 
