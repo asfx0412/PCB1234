@@ -1,0 +1,58 @@
+# UniPCB Default Configuration
+
+# Data Configuration
+data:
+  data_path: "data/"
+  scenario: "component_detection"  # component_detection | defect_localization | quality_analysis
+  split: "train"                   # train | val | test
+  image_size: [224, 224]
+  max_length: 512
+
+# Model Configuration
+model:
+  vision_model_name: "clip-vit-large-patch14"
+  language_model_name: "Qwen/Qwen-7B"
+  hidden_size: 1024
+  num_queries: 64
+
+# Training Configuration
+training:
+  batch_size: 16
+  num_epochs: 10
+  learning_rate: 1e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  gradient_accumulation_steps: 4
+  
+  # Progressive Curriculum Learning
+  curriculum:
+    stage1_epochs: 3    # Basic component recognition
+    stage2_epochs: 4    # Defect detection
+    stage3_epochs: 3    # Complex analysis
+
+# Evaluation Configuration
+evaluation:
+  batch_size: 32
+  metrics:
+    - mAP
+    - accuracy
+    - f1_score
+    - precision_at_1
+    - precision_at_5
+    - iou_mean
+    - bleu
+    - rouge
+
+# Output Configuration
+output:
+  output_dir: "outputs/"
+  log_dir: "logs/"
+  checkpoint_dir: "checkpoints/"
+  save_interval: 1  # epochs
+
+# Miscellaneous
+misc:
+  seed: 42
+  num_workers: 4
+  pin_memory: true
+  distributed: false
