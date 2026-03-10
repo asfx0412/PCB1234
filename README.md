@@ -81,17 +81,29 @@ python evaluation/evaluate.py --model models/pcb_gpt.pth --scenario all
 ```
 
 ## 📊 Main Experiment Results
-Quantitative comparison on the UniPCB Benchmark across different model categories. **Bold** = best performance, <u>Underline</u> = second-best performance within each category. P1/P2/P3 = fully/weakly/unlabeled settings.
+Quantitative comparison on the UniPCB Benchmark across Commercial, IAD, and Open-Source MLLMs. **Bold** = best performance, <u>Underline</u> = second-best performance within each model category. P1/P2/P3 = fully/weakly/unlabeled settings.
 
-| Model Category | Model | Size | P1 Acc | P2 Acc | P3 Acc | Localization F1 | Overall Score |
-|----------------|-------|------|--------|--------|--------|------------------|---------------|
-| **Commercial MLLM** | GPT-4o | - | 64.2% | 58.7% | 61.0% | 31.2% | 56.2% |
-| | Gemini-1.5 Pro | - | 62.7% | 55.4% | 57.8% | 28.9% | 52.8% |
-| | Qwen-VL-Max | - | **68.1%** | **62.3%** | **65.7%** | **34.1%** | **60.5%** |
-| **IAD Models** | AnomalyGPT | 7B | 22.1% | 18.7% | 20.4% | 12.3% | 21.2% |
-| **Open Source MLLM** | Qwen2.5-VL | 7B | 53.2% | 44.2% | 66.7% | 22.3% | 55.0% |
-| | Qwen3-VL-Instruct | 8B | <u>61.5%</u> | <u>48.7%</u> | <u>64.8%</u> | 22.2% | <u>58.6%</u> |
-| | PCB-GPT (Ours) | 7B | **72.5%** | **66.4%** | **73.4%** | **51.1%** | **67.3%** |
+| Model Category | Model | Scale | P2 Acc | P3 Acc | F1 | LLM Judge | Average |
+|----------------|-------|-------|--------|--------|----|-----------|---------|
+| **Commercial MLLM** | GPT5-Main | -- | <u>73.1</u> | <u>66.1</u> | <u>20.2</u> | **73.7** | **66.5** |
+| | Gemini2.5-Pro | -- | **76.4** | **68.5** | **23.6** | <u>70.8</u> | <u>64.9</u> |
+| | Gemini2.5-Flash | -- | 63.4 | 46.5 | 17.0 | 69.1 | 59.8 |
+| **IAD MLLM** | AD-Copilot | 7B | 52.5 | 53.0 | 18.8 | 62.7 | 61.3 |
+| | EMIT | 8B | 36.4 | 48.5 | 10.5 | 60.2 | 56.1 |
+| | IAD-R1 | 7B | 58.9 | 50.1 | 15.2 | 36.0 | 51.0 |
+| | AnomalyGPT | 7B | 12.9 | 12.3 | -- | 34.6 | 37.4 |
+| **Open Source MLLM** | DeepSeek2VL | 16B | 17.5 | 24.4 | -- | 39.6 | 43.0 |
+| | InternVL2.5 | 8B | 56.7 | 39.0 | 14.0 | 58.7 | 56.6 |
+| | InternVL3 | 8B | 52.9 | 47.2 | 18.0 | 56.5 | 55.9 |
+| | InternVL3.5 | 8B | 57.5 | 43.5 | 19.5 | 55.5 | 55.6 |
+| | LLaVA-OV | 8B | 61.6 | <u>55.4</u> | -- | 59.8 | 58.1 |
+| | MiMo-V2-Flash | 15B | 40.0 | 47.7 | 16.1 | 42.6 | 48.4 |
+| | MiniCPM-V4.5 | 8B | 53.9 | 54.0 | 15.5 | 58.2 | 56.7 |
+| | Qwen2.5-VL | 7B | 53.2 | 44.2 | <u>22.3</u> | 54.3 | 55.0 |
+| | Qwen3-VL-Instruct | 8B | 61.5 | 48.7 | 22.2 | <u>61.0</u> | <u>58.6</u> |
+| | Qwen3-VL-Think | 8B | <u>65.6</u> | 54.6 | 20.1 | 58.7 | 58.5 |
+| | PCB-GPT (Ours) | 7B | **72.5** | **66.4** | **51.1** | **65.8** | **67.3** |
+
 
 ## 📚 PCB Dataset Catalog
 Below is the full comprehensive catalog of PCB datasets surveyed for UniPCB construction (similar to the SOTA methods list in awesome-industrial-anomaly-detection):
