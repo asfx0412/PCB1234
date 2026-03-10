@@ -1,6 +1,5 @@
 # UniPCB: A Unified Vision-Language Benchmark for PCB Quality Inspection
 
-[![Industry_Inspection](https://img.shields.io/badge/Task-PCB_Quality_Inspection-white)](https://github.com/M-3LAB/awesome-industrial-anomaly-detection)
 [![UniPCB](https://img.shields.io/badge/Dataset-UniPCB-blue)]()
 [![arXiv Preprint](https://img.shields.io/badge/Paper-arXiv%3A2601.19222-red)](https://arxiv.org/abs/2601.19222)
 [![PCB-GPT](https://img.shields.io/badge/Model-PCB--GPT-green)]()
