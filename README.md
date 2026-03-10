@@ -97,8 +97,9 @@ Quantitative comparison on the UniPCB Benchmark across different model categorie
 | | PCB-GPT (Ours) | 7B | **72.5%** | **66.4%** | **73.4%** | **51.1%** | **67.3%** |
 
 ## 📚 PCB Dataset Catalog
-Below is the comprehensive catalog of PCB datasets surveyed for UniPCB construction (similar to the SOTA methods list in awesome-industrial-anomaly-detection):
+Below is the full comprehensive catalog of PCB datasets surveyed for UniPCB construction (similar to the SOTA methods list in awesome-industrial-anomaly-detection):
 
+### Defect-only Datasets
 | Dataset | PCB Type | Modality | Target | # Categories | # Images | Link |
 |---------|----------|----------|--------|--------------|----------|------|
 | HRIPCB | BPCB | RGB | Defect | 6 | 1386 | [pkusz.edu.cn](https://robotics.pkusz.edu.cn/resources/dataset/) |
@@ -106,11 +107,51 @@ Below is the comprehensive catalog of PCB datasets surveyed for UniPCB construct
 | DeepPCB | BPCB | Line-Scan | Defect | 6 | 3000 | [GitHub](https://github.com/tangsanli5201/DeepPCB) |
 | PCB-AoI | PCBA | AOI | Defect | 1 | 1211 | [Kaggle](https://www.kaggle.com/datasets/kubeedgeianvs/pcb-aoi/data) |
 | PCBA-DET | PCBA | Real | Defect | 8 | 4601 | [GitHub](https://github.com/ismh16/PCBA-Dataset?tab=readme-ov-file) |
+| Solder Joint Dataset | PCBA | Real | Defect | 5 | 3390 | [GitHub](https://github.com/furkanulger/solder-joint-dataset?tab=readme-ov-file) |
+| Dataset-PCB | PCBA | Real | Defect | 2 | 3196 | [GitHub](https://github.com/asrf001/DatasetPCB/tree/master) |
+| DsPCBSD+ | BPCB | AOI | Defect | 9 | 10259 | [GitHub](https://github.com/kikopapa/PCB_Defect_Detection) |
+| PCB-Defect-Detection-Image-Registration | BPCB | Line-Scan | Defect | 6 | 20 | [GitHub](https://github.com/vihangp/PCB-Defect-Detection-using-Image-Registration/tree/master) |
+| Defects Dataset | PCBA | Real | Defect | 5 | 484 | [Roboflow](https://universe.roboflow.com/diplom-qz7q6/defects-2q87r/dataset/12) |
+| PCB-Defect-Detection | PCBA | RGB | Defect | 6 | 898 | [Roboflow](https://universe.roboflow.com/research-zdvjv/pcb_defect_detection-3ecqi) |
+| Mono_PCB Dataset | PCBA | RGB | Defect | 16 | 248 | [Roboflow](https://universe.roboflow.com/detectpcb/mono_pcb) |
+| Mixed PCB defect | BPCB | RGB | Defect | 6 | 1741 | [Mendeley](https://data.mendeley.com/datasets/fj4krvmrr5/2) |
+| Bangla_PCB_yolo | BPCB | RGB | Defect | 6 | 1196 | [Kaggle](https://www.kaggle.com/datasets/rawadjashid/bangla-pcb-yolo) |
+| MRC-DETR | BPCB | AOI | Defect | 3 | 800 | [GitHub](https://github.com/utopiawsw/MRC-DETR) |
+| U-PCBD | BPCB | Ultrasonic | Defect | 5 | 4320 | [iiplab.net](https://iiplab.net/u-pcbd/) |
+
+### Mixed (Defect + Component) Datasets
+| Dataset | PCB Type | Modality | Target | # Categories | # Images | Link |
+|---------|----------|----------|--------|--------------|----------|------|
 | FICS | PCBA | RGB | Mix | 31 | 9912 | [trust-hub.org](https://trust-hub.org/#/data/fics-pcb) |
 | VisA (PCB) | PCBA | RGB | Mix | 10 | 4416 | [GitHub](https://github.com/amazon-science/spot-diff) |
 | PCB-Bank | PCBA | RGB | Mix | 11 | 2333 | [GitHub](https://github.com/SSRheart/PCB-Bank?tab=readme-ov-file) |
+| PCB-Resistor-Defect-Dataset | PCBA | RGB | Mix | 11 | 261399 | [GitHub](https://github.com/leiruoshan/PCB-Resistor-Defect-Dataset?tab=readme-ov-file) |
+| PCB_Datasets-main | PCBA | AOI | Mix | 8 | 4748 | [GitHub](https://github.com/YMkai/PCB_Datasets/tree/main) |
+| PCB AD | PCBA | RGB | Mix | 5 | 690 | [Kaggle](https://www.kaggle.com/datasets/lhk511/pcb-ad) |
+| Multiple Datasets on PCB Defects | BPCB | AOI | Mix | 2 | 18493 | [Kaggle](https://www.kaggle.com/datasets/jiafuwen77/multiple-datasets-on-pcb-defects) |
+| MPI-PCB | PCBA | Real | Mix | 2 | 1797 | [GitHub](https://github.com/Diulhio/pcb_anomaly) |
+
+### Component-only Datasets
+| Dataset | PCB Type | Modality | Target | # Categories | # Images | Link |
+|---------|----------|----------|--------|--------------|----------|------|
 | Micro-PCB Images | PCBA | RGB | Component | 13 | 8125 | [Kaggle](https://www.kaggle.com/datasets/frettapper/micropcb-images/data) |
-| *[Full list in Appendix]* | - | - | - | - | - | [Appendix](https://arxiv.org/abs/xxxx.xxxxx) |
+| FPIC | PCBA | AOI | Component | 25 | 6260 | [ece.ufl.edu](https://physicaldb.ece.ufl.edu/index.php/fics-pcb-image-collection-fpic/) |
+| PCB oriented detection | PCBA | AoI | Component | 41 | 190 | [Kaggle](https://www.kaggle.com/datasets/yuyi1005/pcb-oriented-detection) |
+| PCB Component Detection | PCBA | Real | Component | 9 | 1410 | [DatasetNinja](https://datasetninja.com/pcb-component-detection) |
+| PCB-Components-1495 | PCBA | Real | Component | 28 | 830 | [Kaggle](https://www.kaggle.com/datasets/nguyenhoangsoz/pcb-data) |
+| PCB-Component-Detection-CVM | BPCB | RGB | Component | 9 | 101 | [Roboflow](https://universe.roboflow.com/research-pbbdl/pcb-component-detection-dre7a) |
+| DSLR | PCBA | RGB | Component | 4 | 748 | [tuwien.ac.at](https://cvl.tuwien.ac.at/research/cvl-databases/pcb-dslr-dataset/) |
+| PCB-Vision | PCBA | RGB | Component | 4 | 106 | [GitHub](https://github.com/Elias-Arbash/PCBVision) |
+
+### Private/Closed-source Datasets
+| Dataset | PCB Type | Modality | Target | # Categories | # Images | Access |
+|---------|----------|----------|--------|--------------|----------|--------|
+| Lite-On Dataset | PCBA | AOI | Mix | 8 | 12200 | Private |
+| AXI_PCB_defect_detection | PCBA | AXI | Mix | 4 | 32377 | Private |
+| PCB-METAL | PCBA | RGB | Component | 4 | 984 | Private |
+| PCBMO | PCBA | RGB | Component | 4 | 3773 | Private |
+| PCBSDD | PCB | RGB | Component | 6 | 19029 | Private |
+
 
 ## Citation
 ```
