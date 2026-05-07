@@ -1,0 +1,30 @@
+{
+  "samples": 16,
+  "images": 20,
+  "datasets": [
+    "AoI",
+    "Dataset-PCB-CNN",
+    "DeepPCB",
+    "FPIC",
+    "PCB-Defect-Detection-using-Image-Registration-master",
+    "PCB-electric-resistance-Dataset_nodefect",
+    "PCBA",
+    "VisA",
+    "pcb-component-detection",
+    "solder-joint-dataset-main"
+  ],
+  "dataset_types": [
+    "P1",
+    "P2",
+    "P3"
+  ],
+  "languages": [
+    "en",
+    "zh"
+  ],
+  "formats": [
+    "closed_ended_qa",
+    "coordinate_grounded_vqa",
+    "open_ended_qa"
+  ]
+}

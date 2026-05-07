@@ -1,0 +1,439 @@
+{
+    "AoI":{
+      "name":"AoI",
+      "dataset_type":"MULTI_QA",
+      "description":"PCB AOI（自动光学检测）数据集用于检测和分析印刷电路板（PCB）上的缺陷。只有一种缺陷为缺焊。",
+      "defect_map": {
+          "0": "lack of solder"
+        },
+        "defect_map_chinese": {
+          "lack of solder": "缺焊"
+        },
+        "defects_describe_english":{
+          "lack of solder": "Solder joint defect. Insufficient or completely missing solder on the joint, preventing reliable electrical and mechanical connection between the component and PCB pad. May be caused by uneven solder paste printing, insufficient reflow temperature, or too short soldering time. Can lead to poor circuit contact or even functional failure. Can be reduced by optimizing solder paste printing process, adjusting reflow temperature curve, and strengthening AOI inspection."
+        },
+      "defects_describe":{
+          "lack of solder": "缺焊缺陷。焊点上焊锡不足或完全缺失，导致元件与PCB焊盘未能形成可靠的电气和机械连接。可能由焊膏印刷不均、回流焊温度不足或焊接时间过短引起。会导致电路接触不良，甚至功能失效。可通过优化焊膏印刷工艺、调整回流焊温度曲线及加强AOI检测来减少缺焊问题。"
+      }
+  },
+    "Dataset-PCB-CNN":{
+      "name":"Dataset-PCB-CNN",
+      "dataset_type":"COORDINATE_ONLY",
+      "description":"一个标准的PCB电路板数据集，每张图片的缺陷数量很多。具有2种缺陷，分别是缺焊和焊桥。",
+      "defect_map": {
+          "0": "lack of solder",
+          "1": "solder bridge"
+        },
+        "defect_map_chinese": {
+          "lack of solder": "缺焊",
+          "solder bridge": "焊桥"
+        },
+        "defects_describe_english":{
+          "lack of solder": "Solder joint defect. Insufficient or completely missing solder on the joint, preventing reliable electrical and mechanical connection between the component and PCB pad. May be caused by uneven solder paste printing, insufficient reflow temperature, or too short soldering time. Can lead to poor circuit contact or even functional failure. Can be reduced by optimizing solder paste printing process, adjusting reflow temperature curve, and strengthening AOI inspection.",
+          "solder bridge": "Solder bridge defect. Conductive bridge formed between adjacent solder joints, causing a short circuit. Usually caused by excessive solder, improper temperature control during soldering, or insufficient spacing between pads. May affect normal circuit operation and cause component damage in severe cases. Optimizing soldering process and adjusting pad design can reduce the occurrence of solder bridges."
+        },
+      "defects_describe":{
+          "lack of solder": "缺焊缺陷。焊点上焊锡不足或完全缺失，导致元件与PCB焊盘未能形成可靠的电气和机械连接。可能由焊膏印刷不均、回流焊温度不足或焊接时间过短引起。会导致电路接触不良，甚至功能失效。可通过优化焊膏印刷工艺、调整回流焊温度曲线及加强AOI检测来减少缺焊问题。",
+          "solder bridge": "焊桥缺陷。相邻焊点之间形成导电桥，导致短路。通常由于焊锡过多、焊接温度控制不当或焊盘间距过小引起。可能影响电路正常工作，严重时导致元件损坏。优化焊接工艺、调整焊盘设计可减少焊桥发生。"
+      }
+    },
+
+  "PCBA":{
+    "name":"PCBA",
+    "dataset_type":"MULTI_QA",
+    "description":"这是一个PCB缺陷目标检测数据集。具有5种缺陷，分别是划痕、缺少布线、布线松动、螺丝松动、缺少螺丝。",
+    "defect_map": {
+        "0":"scratch",
+        "1":"missing wiring",
+        "2":"loose wiring",
+        "3":"screws loosening",
+        "4":"missing screws"
+      },
+      "defect_map_chinese": {
+        "scratch": "划痕",
+        "missing wiring": "缺少布线",
+        "loose wiring": "布线松动",
+        "screws loosening": "螺丝松动",
+        "missing screws": "缺少螺丝"
+      },
+      "defects_describe_english":{
+        "scratch": "Scratch defect. Mechanical damage on the surface of PCB or traces, possibly caused by contact friction during transportation, assembly or processing. Minor scratches may affect appearance, while severe ones may damage electrical connections or insulation layers. Can be reduced by optimizing production processes and increasing protective measures.",
+        "missing wiring": "Missing wiring defect. Expected traces are not installed or etched, possibly due to design issues, production defects or installation errors. This can lead to circuit malfunction or even complete system failure. Strict circuit testing (e.g. E-test) can help avoid such problems.",
+        "loose wiring": "Loose wiring defect. Traces are not properly secured, possibly due to poor soldering, bad terminal contact or mechanical stress. This can lead to signal transmission anomalies or unstable electrical connections. Optimizing soldering processes and increasing mechanical fixation can improve reliability.",
+        "screws loosening": "Screws loosening defect. Screws are not tightened properly during assembly, possibly due to assembly processes, mismatched screw specifications or vibration effects. This can lead to component detachment or unstable connections. Using appropriate fastening torque and anti-loosening measures can improve assembly quality.",
+        "missing screws": "Missing screws defect. Some screws are not installed during assembly, possibly due to material omissions or process negligence. This can affect the fixation of PCB or casing, potentially leading to mechanical failures or poor contact. Improving assembly processes and inspection methods can help avoid such issues."
+      },
+    "defects_describe":{
+        "scratch": "划痕缺陷。PCB表面或导线上出现机械损伤，可能由运输、组装或加工过程中的接触摩擦导致。轻微划痕可能影响外观，严重时可能破坏电气连接或绝缘层。可通过优化生产流程、增加防护措施减少划痕。",
+        "missing wiring": "缺少布线缺陷。预期的导线未安装或蚀刻缺失，可能由于设计问题、生产缺陷或安装错误引起。会导致电路无法正常工作，甚至整机功能失效。采用严格的电路检测（如E-test）可避免该类问题。",
+        "loose wiring": "布线松动缺陷。导线未正确固定，可能由于焊接不牢、端子接触不良或机械应力影响引起。可能导致信号传输异常或电气连接不稳定。优化焊接工艺并增加机械固定措施可提高可靠性。",
+        "screws loosening": "螺丝松动缺陷。组装过程中螺丝未紧固到位，可能由于装配工艺、螺丝规格不匹配或震动影响导致。可能导致组件脱落或连接不稳定。采用合适的紧固扭矩和防松措施可提高装配质量。",
+        "missing screws": "缺少螺丝缺陷。组装时部分螺丝未安装，可能由于物料遗漏或工艺疏忽导致。会影响PCB或外壳的固定，可能引发机械故障或接触不良。完善装配流程和检测手段可避免此类问题。"
+    }
+  },
+    "VisA":{
+      "name":"VisA",
+      "dataset_type":"MULTI_QA",
+      "description":"数据集包含众多结构复杂的 PCB 缺陷图像，涵盖9种缺陷类型：弯曲、熔化、缺少元件、划痕、烧焦、污染、损坏、多余元件、错误位置。图像中包含晶体管、电容器、芯片等常见电子元件，适用于多类缺陷检测与复杂目标识别任务。    ",
+      "defect_map": {
+          "0": "bent",
+          "1": "melt",
+          "2": "missing components",
+          "3": "scratch",
+          "4": "burnt",
+          "5": "contamination",
+          "6": "damage",
+          "7": "extra",
+          "8": "wrong place"
+        },
+        "defect_map_chinese": {
+          "bent": "弯曲",
+          "melt": "熔化",
+          "missing components": "缺少元件",
+          "scratch": "划痕",
+          "burnt": "烧焦",
+          "contamination": "污染",
+          "damage": "损坏",
+          "extra": "多余元件",
+          "wrong place": "错误位置"
+        },
+        "defects_describe_english":{
+          "bent": "Bent defect. PCB or components exhibit unintended bending deformation, possibly caused by transportation, assembly pressure, or material stress. May affect electrical connections and increase the risk of solder cracking. Can be reduced by using enhanced materials and optimizing storage methods.",
+          "melt": "Melt defect. Localized melting of PCB material due to overheating, possibly caused by excessive soldering temperature, overload, or short circuit. Affects the structural strength and electrical performance of the circuit board. Optimizing thermal management design and soldering parameters can reduce melting risks.",
+          "missing components": "Missing components defect. Expected electronic components are not installed on the PCB, possibly due to mounting errors, material shortages, or process control failures. Leads to missing or abnormal circuit functions. Automated inspection (AOI, SPI) and improved material management can reduce this risk.",
+          "scratch": "Scratch defect. Mechanical damage on the surface of PCB or traces, possibly caused by contact friction during transportation, assembly or processing. Minor scratches may affect appearance, while severe ones may damage electrical connections or insulation layers. Can be reduced by optimizing production processes and increasing protective measures.",
+          "burnt": "Burnt defect. PCB or components damaged by high temperature, usually caused by overload, short circuit, or insufficient heat dissipation. May lead to permanent damage and increase safety risks. Improved heat dissipation design and current protection measures can reduce burning issues.",
+          "contamination": "Contamination defect. Oil stains, flux residues, or chemical deposits appear on the surface of PCB, possibly affecting soldering quality, signal integrity, or insulation performance. Effective cleaning processes (e.g., ultrasonic cleaning) and strict production control can reduce contamination impact.",
+          "damage": "Damage defect. PCB or components suffer mechanical, thermal, or chemical damage, possibly caused by external impact, overheating, or corrosion. Affects electrical performance and may lead to system failure. Strengthening packaging protection and controlling production environment can reduce damage risks.",
+          "extra": "Extra components defect. PCB or components have unintended additional elements, possibly caused by assembly errors or material misplacement. May lead to circuit malfunction or interference. Automated inspection and improved assembly processes can help identify and correct such defects.",
+          "wrong place": "Wrong place defect. Electronic components are installed in the wrong position, possibly due to incorrect settings of the pick-and-place machine or manual assembly errors. May affect circuit function and even cause equipment damage. Automated optical inspection (AOI) and X-ray inspection can help detect and correct such defects."
+        },
+      "defects_describe":{
+          "bent": "弯曲缺陷。PCB或元件出现非设计性的弯曲变形，可能由运输、装配压力或材料应力导致。可能影响电气连接，并增加焊接开裂风险。通过使用增强材料和优化存储方式可减少弯曲缺陷。",
+          "melt": "熔化缺陷。PCB局部因过热导致材料熔化，可能由焊接温度过高、过载或短路引起。影响电路板结构强度和电气性能。优化热管理设计和焊接参数可降低熔化风险。",
+          "missing components": "缺少元件缺陷。PCB上预期的电子元件未安装，可能由于贴装错误、物料短缺或工艺控制失误导致。会导致电路功能缺失或异常。通过自动化检测（AOI、SPI）和完善的物料管理可降低该类风险。",
+          "scratch": "划痕缺陷。PCB表面或导线上出现机械损伤，可能由运输、组装或加工过程中的接触摩擦导致。轻微划痕可能影响外观，严重时可能破坏电气连接或绝缘层。可通过优化生产流程、增加防护措施减少划痕。",
+          "burnt": "烧焦缺陷。PCB或元件因高温损坏，通常由过载、短路或散热不足引起。可能导致永久性损坏，并增加安全风险。改进散热设计和电流保护措施可减少烧焦问题。",
+          "contamination": "污染缺陷。PCB表面出现油污、助焊剂残留或化学物质沉积，可能影响焊接质量、信号完整性或绝缘性能。采用有效的清洁工艺（如超声波清洗）和严格的生产控制可降低污染影响。",
+          "damage": "损坏缺陷。PCB或元件受到机械、热或化学损伤，可能由外力冲击、过热或腐蚀引起。影响电气性能，可能导致整机失效。加强包装保护和生产环境控制可减少损坏风险。",
+          "extra": "多余元件缺陷。PCB或元件受到机械、热或化学损伤，可能由外力冲击、过热或腐蚀引起。影响电气性能，可能导致整机失效。加强包装保护和生产环境控制可减少损坏风险。",
+          "wrong place": "错误位置缺陷。电子元件被安装到错误的位置，可能由于贴片机坐标设定错误或手工装配失误导致。可能影响电路功能，甚至造成设备损坏。自动光学检测（AOI）和X-ray检测可帮助发现并修正此类缺陷。"
+
+        }
+    },
+    "PCB-Defect-Detection-using-Image-Registration-master":{
+      "name":"PCB-Defect-Detection-using-Image-Registration-master",
+      "dataset_type":"MULTI_QA",
+      "description":"该数据集是由经过CCD线性扫描后的PCB缺陷和模板图像，缺陷类型为缺孔、鼠咬、短路、断路。",
+      "defect_map": {
+        "0": "missing hole",
+        "1": "open circuit",
+        "2": "mouse bite",
+        "3": "short"
+      },
+      "defect_map_chinese": {
+        "missing hole": "缺孔",
+        "open circuit": "开路",
+        "mouse bite": "鼠咬",
+        "short": "短路"
+      },
+      "defects_describe_english":{
+        "missing hole": "Missing hole defect. Absence of drilled holes, leading to incorrect component installation or circuit disconnection. May be caused by drilling process deviations, equipment failures, or design file errors. Affects PCB electrical performance and assembly reliability, can be screened by Automated Optical Inspection (AOI) and X-ray inspection.",
+        "open circuit": "Open circuit defect. Wire breakage prevents current flow. Usually caused by excessive etching, copper foil detachment, or mechanical damage. Directly affects PCB functionality, can be ensured by flying probe testing and electrical inspection to verify circuit integrity.",
+        "mouse bite": "Mouse bite defect. Sawtooth-like notches resembling mouse bites, usually found on board edges or traces, may be caused by insufficient etching, mechanical stress, or panel separation issues. Easily weakens PCB mechanical strength and may affect signal transmission. Optimizing etching processes and adjusting panel layout can reduce such defects.",
+        "short": "Short circuit defect. Accidental connection between adjacent conductors, possibly caused by solder bridges, copper debris residue, or etching defects. May lead to abnormal current flow, component burnout, or complete board failure. Strict cleaning processes and optimized routing design can reduce risks."
+      },
+    "defects_describe":{
+        "missing hole": "缺孔缺陷。缺少钻孔，导致元器件无法正确安装或电路断开。可能由于钻孔工艺偏差、设备故障或设计文件错误引起。影响PCB的电气性能和装配可靠性，可通过自动光学检测（AOI）和X-ray检测进行筛查。",
+        "open circuit": "开路缺陷。导线断裂，导致电流无法通过。通常由蚀刻过度、铜箔脱落或机械损伤引起。直接影响PCB的功能，可通过飞针测试和电气检测确保线路完整性。",
+        "mouse bite": "鼠咬缺陷。类似被鼠咬的锯齿状缺口，通常出现在板边或导线上，可能由蚀刻不足、机械应力或分板工艺问题导致。容易削弱PCB机械强度，并可能影响信号传输。优化蚀刻工艺、调整拼板方式可减少此类缺陷。",
+        "short": "短路缺陷。相邻导体意外连通，可能由焊锡桥接、铜屑残留或蚀刻缺陷引起。可能导致电流异常、元件烧毁或整板失效。采用严格的清洁流程、优化布线设计可降低风险。"
+    }
+    },
+
+    "DeepPCB":{
+      "name":"DeepPCB",
+      "dataset_type":"COMPARE_OK_NG",
+      "description":"DeepPCB是一个用于PCB缺陷检测的标准数据集，包含1500对测试图像，每对由一张无缺陷模板图像和一张与其对齐的测试图像组成。数据集中共标注了6类常见缺陷的位置信息：开路、短路、鼠咬、杂散、缺孔、杂铜、所有图像均由分辨率约为48像素/毫米的线性扫描CCD采集，具备高精度、工业级图像质量。该数据集广泛用于PCB缺陷目标检测模型的训练与评估。",
+      "defect_map": {
+          "0": "missing hole",
+          "1": "mouse bite",
+          "2": "open circuit",
+          "3": "short",
+          "4": "spur",
+          "5": "spurious copper"
+        },
+        "defect_map_chinese": {
+          "missing hole": "缺孔",
+          "mouse bite": "鼠咬",
+          "open circuit": "开路",
+          "short": "短路",
+          "spur": "散杂",
+          "spurious copper": "杂铜"
+        },
+        "defects_describe_english":{
+          "missing hole": "Missing hole defect. Absence of drilled holes, leading to incorrect component installation or circuit disconnection. May be caused by drilling process deviations, equipment failures, or design file errors. Affects PCB electrical performance and assembly reliability, can be screened by Automated Optical Inspection (AOI) and X-ray inspection.",
+          "mouse bite": "Mouse bite defect. Sawtooth-like notches resembling mouse bites, usually found on board edges or traces, may be caused by insufficient etching, mechanical stress, or panel separation issues. Easily weakens PCB mechanical strength and may affect signal transmission. Optimizing etching processes and adjusting panel layout can reduce such defects.",
+          "open circuit": "Open circuit defect. Wire breakage prevents current flow. Usually caused by excessive etching, copper foil detachment, or mechanical damage. Directly affects PCB functionality, can be ensured by flying probe testing and electrical inspection to verify circuit integrity.",
+          "short": "Short circuit defect. Accidental connection between adjacent conductors, possibly caused by solder bridges, copper debris residue, or etching defects. May lead to abnormal current flow, component burnout, or complete board failure. Strict cleaning processes and optimized routing design can reduce risks.",
+          "spur": "Spur defect. Protruding metal filaments or burrs, possibly caused by poor etching, excessive copper deposition, or mechanical processing issues. Easily causes high-frequency signal interference, short circuits, or soldering defects. Optimizing etching parameters and increasing detection methods can reduce spur generation.",
+          "spurious copper": "Spurious copper defect. Irregular residual copper foil on the PCB surface, possibly caused by photoresist defects, insufficient etching, or poor manufacturing process control. Easily forms parasitic conductors, leading to signal integrity issues or short circuit risks. Can be reduced by improving exposure and etching processes, and increasing automated detection methods."
+        },
+      "defects_describe":{
+          "missing hole": "缺孔缺陷。缺少钻孔，导致元器件无法正确安装或电路断开。可能由于钻孔工艺偏差、设备故障或设计文件错误引起。影响PCB的电气性能和装配可靠性，可通过自动光学检测（AOI）和X-ray检测进行筛查。",
+          "mouse bite": "鼠咬缺陷。类似被鼠咬的锯齿状缺口，通常出现在板边或导线上，可能由蚀刻不足、机械应力或分板工艺问题导致。容易削弱PCB机械强度，并可能影响信号传输。优化蚀刻工艺、调整拼板方式可减少此类缺陷。",
+          "open circuit": "开路缺陷。导线断裂，导致电流无法通过。通常由蚀刻过度、铜箔脱落或机械损伤引起。直接影响PCB的功能，可通过飞针测试和电气检测确保线路完整性。",
+          "short": "短路缺陷。相邻导体意外连通，可能由焊锡桥接、铜屑残留或蚀刻缺陷引起。可能导致电流异常、元件烧毁或整板失效。采用严格的清洁流程、优化布线设计可降低风险。",
+          "spur": "散杂缺陷。突出的金属细丝或尖刺，可能由蚀刻不良、铜箔过度沉积或机械加工问题引起。容易造成高频信号干扰、短路或焊接缺陷。优化蚀刻参数并增加检测手段可减少散杂产生。",
+          "spurious copper": "杂铜缺陷。PCB表面存在不规则的残留铜箔，可能由于光刻胶缺陷、蚀刻不足或制造工艺控制不当导致。易形成寄生导体，引发信号完整性问题或短路风险。可通过改进曝光和蚀刻工艺、增加自动检测手段减少此类缺陷。"
+      }
+    },
+
+    "solder-joint-dataset-main":{
+      "name":"solder-joint-dataset-main",
+      "dataset_type":"BASIC_QA",
+      "description":"PCB-solder-joint-Dataset是一个面向PCB无源SMD器件与集成电路（IC）焊点质量检测的标准数据集，共包含2616张测试图像。数据集中覆盖4类典型焊接缺陷：移位、多焊、缺焊以及焊桥。无源SMD器件包括贴片电阻、电容等常见元件，结构简单但对焊接位置精度要求高；IC器件焊点则涉及多引脚封装形式，如QFP、SOP等，易产生桥连、偏移等复杂缺陷。所有图像均来源于真实生产线，具备高分辨率与工业级图像质量，适用于焊点缺陷检测与分类模型的训练与评估。",
+      "defect_map": {
+          "6": "lack of solder",
+          "7": "solder bridge",
+          "25": "excessive solder",
+          "26": "shifted component"
+        },
+        "defect_map_chinese": {
+          "lack of solder": "缺焊",
+          "solder bridge": "焊桥",
+          "excessive solder": "多焊",
+          "shifted component": "移位"
+        },
+        "defects_describe_english":{
+          "lack of solder": "Solder joint defect. Insufficient or completely missing solder on the joint, preventing reliable electrical and mechanical connection between the component and PCB pad. May be caused by uneven solder paste printing, insufficient reflow temperature, or too short soldering time. Can lead to poor circuit contact or even functional failure. Can be reduced by optimizing solder paste printing process, adjusting reflow temperature curve, and strengthening AOI inspection.",
+          "solder bridge": "Solder bridge defect. Conductive bridge formed between adjacent solder joints, causing a short circuit. Usually caused by excessive solder, improper temperature control during soldering, or insufficient spacing between pads. May affect normal circuit operation and cause component damage in severe cases. Optimizing soldering process and adjusting pad design can reduce the occurrence of solder bridges.",
+          "excessive solder": "Excessive solder defect. Refers to an excessive amount of solder on the joint, which may lead to short circuits, thermal stress concentration, or obscuring pad markings. Often caused by over-application of solder, improper use of flux, or excessive soldering time. Can easily lead to cold solder joints, short circuits, or difficulties in later maintenance. Effective reduction can be achieved through precise control of soldering parameters and enhanced process monitoring.",
+          "shifted component": "Shifted component defect. Electronic components shift during soldering, possibly due to insufficient accuracy of the pick-and-place machine, reflow gas flow effects, or PCB warping. May affect welding reliability and even cause short circuits. Optimizing placement accuracy and reflow parameters can reduce shifting issues."
+        },
+      "defects_describe":{
+          "lack of solder": "缺焊缺陷。焊点上焊锡不足或完全缺失，导致元件与PCB焊盘未能形成可靠的电气和机械连接。可能由焊膏印刷不均、回流焊温度不足或焊接时间过短引起。会导致电路接触不良，甚至功能失效。可通过优化焊膏印刷工艺、调整回流焊温度曲线及加强AOI检测来减少缺焊问题。",
+          "solder bridge": "焊桥缺陷。相邻焊点之间形成导电桥，导致短路。通常由于焊锡过多、焊接温度控制不当或焊盘间距过小引起。可能影响电路正常工作，严重时导致元件损坏。优化焊接工艺、调整焊盘设计可减少焊桥发生。",
+          "excessive solder": "多焊缺陷。指焊点上焊锡量明显超过正常要求，可能导致焊点短路、热应力集中或遮盖焊盘标识。多因焊锡添加过量、助焊剂使用不当或焊接时间过长造成。易引发焊点虚焊、短路或后期维护困难。通过精细控制焊接参数和加强工艺监控可有效减少多焊现象。",
+          "shifted component": "移位缺陷。电子元件在焊接过程中发生偏移，可能由贴片机精度不足、回流焊气流影响或PCB翘曲导致。可能影响焊接可靠性，甚至造成短路。优化贴装精度和回流焊参数可减少移位问题。"
+      }
+    },
+
+    "PCB-electric-resistance-Dataset_nodefect":{
+      "name":"PCB-electric-resistance-Dataset_nodefect",
+      "dataset_type":"DEFECT_FREE",
+      "description": "PCB-electric-resistance-Dataset_nodefect 是一个专注于贴片电阻的图像数据集，共包含 960 张清晰图像，均采集自真实的 PCB 工业生产场景。图像中仅包含电阻这一元件类别，无其他元件干扰，具备丰富的电阻结构细节与清晰的器件轮廓，适用于电阻目标检测、分类识别及细粒度分析等多种任务。该数据集包括多种印丝规格，包括 1001、1003、1201、1500、2000、2400、2701 和 3900 等常见规格，具备良好的电阻多样性。电阻丝印编码采用标准的数码标记方式，分为三位数与四位数两种形式：三位数字表示电阻阻值的误差为 5%，四位数字表示误差为 1%。编码的前几位表示有效数字，最后一位表示后接 0 的数量。例如，1003 表示阻值为 100 × 10³ = 100,000 欧（100kΩ）,1201 表示阻值为 120 × 10 = 1200 欧。若丝印中包含 'R' 字母，则表示小数点位置，例如 R10 表示 0.10Ω。本数据集尤其适合用于贴片电阻自动识别、电阻类型判别、电阻值解析及其在电子装配检测系统中的应用研究。",
+      "map": {
+          "0": "Resistor"
+        },
+        "map_type": {
+          "R": "电阻"
+        },
+        "map_type_english":{
+          "R": "Resistor"
+        },
+        "describe_english":{
+          "R": "Resistors are fundamental components used to control current and voltage division in electronic circuits. They are the most basic limiting elements, essential for circuit functionality and stability."
+        },
+      "describe":{
+          "R": "控制电流、电压分压，是最基础的限流元件。"      
+        }
+    },
+
+    "FPIC":{
+      "name":"FPIC",
+      "dataset_type":"DEFECT_FREE",
+      "description":"本数据集由多张高分辨率 PCB 图像构建而成，共包含 90 张图像，在原图像裁剪切割后生成，适用于电路板的目标检测、分类、实例分割等视觉任务。图像中标注了种类丰富的电子元件，便于模型学习电路板中的结构与布局。数据集中共定义了 28 个元器件类别，涵盖 PCB 中常见的主动器件、无源器件及连接类模块，包括电阻（R）、电容（C）、电感（L）、集成电路（U）、连接器（J）、焊盘（P）、测试点（TP）、三极管（Q）、二极管（D）等；",
+      "map": {
+          "0": "Resistor",
+          "1": "Capacitor",
+          "2": "Inductor",
+          "3": "IC/Chip",
+          "4": "Diode",
+          "5": "Transistor",
+          "6": "Connector",
+          "7": "Relay",
+          "8": "Fuse",
+          "9": "Transformer",
+          "10": "Switch",
+          "11": "Crystal/Oscillator",
+          "12": "Zener Diode",
+          "13": "Pad",
+          "14": "Ferrite Bead",
+          "15": "Socket/Connector",
+          "16": "Ground/Voltage/Current Test Point",
+          "17": "LED",
+          "18": "Connector",
+          "19": "Header/Jumper Pin",
+          "20": "Battery",
+          "21": "Test Point",
+          "22": "Voltage Regulator",
+          "23": "Terminal Block",
+          "24": "Filter",
+          "25": "Buzzer",
+          "26": "Timer/Motor",
+          "27": "Motor"
+        },
+        "map_type": {
+            "Resistor": "电阻",
+            "Capacitor": "电容",
+            "Inductor": "电感",
+          "IC": "IC芯片",
+          "IC/Chip": "IC芯片",
+            "Diode": "二极管",
+            "Transistor": "三极管",
+            "Connector": "连接器",
+            "Relay": "继电器",
+            "Fuse": "保险丝",
+            "Transformer": "变压器",
+            "Switch": "开关",
+          "Crystal": "晶体振荡器",
+          "Crystal/Oscillator": "晶体振荡器",
+          "Zener": "齐纳二极管",
+          "Zener Diode": "齐纳二极管",
+            "Pad": "焊盘",
+            "Ferrite Bead": "磁珠元件",
+            "Socket/Connector": "插座/连接器",
+            "Ground/Voltage/Current Test Point": "接地/电压/电流测试点",
+            "LED": "发光二极管",
+            "Connectors": "接插件",
+            "Header/Jumper Pin": "插头/排针",
+            "Battery": "电池",
+            "Test Point": "测试点",
+            "Voltage Regulator": "电压调节器",
+            "Terminal Block": "接线端子",
+            "Filter": "滤波器",
+            "Buzzer": "蜂鸣器",
+          "Timer": "定时器",
+          "Timer/Motor": "定时器/电机",
+          "Motor": "电机"
+        },
+        "map_type_english":{
+          "R": "Resistor",
+          "C": "Capacitor",
+          "L": "Inductor",
+          "U": "IC",
+          "D": "Diode",
+          "Q": "Transistor",
+          "J": "Connector",
+          "K": "Relay",
+          "F": "Fuse",
+          "T": "Transformer",
+          "SW": "Switch",
+          "X": "Crystal_Oscillator",
+          "Z": "Zener Diode",
+          "P": "Pad",
+          "FB": "Ferrite Bead",
+          "JK": "Socket/Connector",
+          "GVI": "Ground/Voltage/Current Test Point",
+          "LD": "LED",
+          "CN": "Connector",
+          "JP": "Header/Jumper Pin",
+          "BT": "Battery",
+          "TP": "Test Point",
+          "REG": "Voltage Regulator",
+          "TB": "Terminal Block",
+          "FIL": "Filter",
+          "H": "Buzzer",
+          "TMR": "Timer",
+          "M": "Motor"
+        },
+        "describe_english":{
+          "R": "Resistors: including precision resistors, thermistors (NTC/PTC), variable resistors (potentiometers), network resistors (arrays), damping resistors, etc. Used for current limiting, voltage division, signal adjustment, etc., they are the most basic passive components in circuits.",
+          "C": "Capacitors: including ceramic capacitors, electrolytic capacitors, bypass capacitors, grounding capacitors, surface mount capacitors, etc. Widely used for filtering, coupling, decoupling, charge storage, and power supply stabilization.",
+          "L": "Inductors: including wire-wound inductors, ferrite inductors, common mode inductors, etc. Used for energy storage, filtering, power management, and impedance matching in RF applications, as well as EMI suppression.",
+          "U": "Integrated Circuits (ICs): including logic ICs, operational amplifiers, driver ICs, power management ICs, microcontrollers, communication chips, etc. Used for signal processing, control operations, voltage conversion, storage, and other core functions.",
+          "D": "Diodes: including rectifier diodes, Zener diodes, Schottky diodes, TVS diodes, ESD protection diodes, LEDs, chip diodes, and diode arrays. Functions include rectification, voltage regulation, protection, light emission, and level shifting.",
+          "Q": "Transistors: including bipolar junction transistors (BJTs), field-effect transistors (MOSFETs), insulated gate bipolar transistors (IGBTs), driver transistors, etc. Used for current amplification, switching, load driving, and power conversion.",
+          "J": "Connectors: including FPC connectors, board-to-board connectors, wire-to-board connectors, USB/HDMI connectors, power/signal sockets, etc. Used for physical connections and electrical transmission between modules.",
+          "K": "Relays: including mechanical relays, solid-state relays, etc. Used for electrical isolation and load switching control.",
+          "F": "Fuses: including glass tube fuses, resettable fuses, surface mount fuses, etc. Used for automatic current interruption in case of abnormal current, protecting circuit safety.",
+          "T": "Transformers: such as power frequency transformers, power transformers, pulse transformers, etc. Used for voltage conversion, signal isolation, and energy transmission.",
+          "SW": "Switches: including buttons, DIP switches, tactile switches, slide switches, DIP switches, etc. Used for manual or automatic control of circuit on/off.",
+          "X": "Crystals_Oscillators: such as quartz crystals, active oscillators, resonators, etc. Used to generate stable clock sources and system frequencies.",
+          "Z": "Zener Diodes: operate in the reverse breakdown region, used for voltage regulation, surge suppression, and voltage clamping.",
+          "P": "Pads: including functional pads, jumper pads, programming interface pads, used for device connections, function configuration, or debugging access.",
+          "FB": "Ferrite Beads: including surface mount ferrite beads, through-hole ferrite beads, etc. Used for high-frequency noise suppression and power supply filtering, commonly used in EMI countermeasures.",
+          "JK": "Socket Connectors: such as RJ45, USB, DC jacks, etc. Used for external signal, data, and power module connections.",
+          "GVI": "Test Points: used for debugging phase ground, voltage, and current measurement access points, facilitating probe testing or automated detection.",
+          "LD": "Light Emitting Diodes (LEDs): including bi-color LEDs, high-brightness LEDs, infrared LEDs, etc. Used for status indication, alarms, lighting, or communication.",
+          "CN": "Connectors: including board-to-board connectors, IDC terminals, aviation plugs, etc. Used for module interconnection between devices.",
+          "JP": "Jumpers/Pin Headers: used for setting functions, level selection, mode switching, etc., configured via jumpers or soldering.",
+          "BT": "Batteries: such as button batteries, lithium batteries, battery holders, etc. Provide main or backup power for circuits, commonly used in RTCs and low-power devices.",
+          "TP": "Test Points: used for electrical testing access points during manufacturing and maintenance, can be used for probe or test machine access.",
+          "REG": "Voltage Regulators: including linear regulators (LDOs), switching regulators (DC-DC), used to output stable voltages, commonly used in power supply modules.",
+          "TB": "Terminal Blocks: such as spring-type, screw-type terminals, commonly used for external signal and power connections.",
+          "FIL": "Filters: including LC networks, active filters, common mode filters, etc. Used for signal shaping, power supply filtering, and interference suppression.",
+          "H": "Buzzers: including passive and active buzzers, used for sound prompts and alarms, widely used in user interaction and safety reminders.",
+          "TMR": "Timers: used to generate delays, counting, and timing functions, commonly used in control circuits and automation systems.",
+          "M": "Motors: including DC motors, stepper motors, servo motors, etc. Used for mechanical movement and control in various applications, from robotics to industrial automation."
+        },
+        "describe": {
+          "R": "电阻：包括精密电阻、热敏电阻（NTC/PTC）、可调电阻（电位器）、网络电阻（排阻）、阻尼电阻等。用于电流限制、电压分压、信号调节等，是电路最基础的被动器件。",
+          "C": "电容：包括陶瓷电容、电解电容、旁路电容、接地电容、贴片电容等。广泛用于滤波、耦合、去耦、电荷存储和电源稳定。",
+          "L": "电感：包括绕线电感、磁芯电感、共模电感等。用于能量储存、滤波、电源管理及射频应用中的阻抗匹配和EMI抑制。",
+          "U": "集成电路（IC）：包含逻辑IC、运算放大器、驱动IC、电源管理IC、微控制器、通信芯片等，用于信号处理、控制运算、电压转换、存储等核心功能。",
+          "D": "二极管：包括整流二极管、齐纳二极管、肖特基、TVS、ESD、LED、芯片二极管及二极管阵列等。功能涵盖整流、稳压、保护、发光及电平转换。",
+          "Q": "三极管：包括双极型晶体管（BJT）、场效应晶体管（MOSFET）、绝缘栅双极晶体管（IGBT）、驱动晶体管等。用于电流放大、开关、负载驱动、电源转换。",
+          "J": "连接器：包括FPC接口、板对板、线对板、USB/HDMI、电源/信号插座等，实现模块间物理连接与电气传输。",
+          "K": "继电器：包括机械继电器、固态继电器等，用于电气隔离和负载切换控制。",
+          "F": "保险丝：包括玻璃管、自恢复、贴片保险丝等。用于异常电流自动熔断，保护电路安全。",
+          "T": "变压器：如工频、电源变压器、脉冲变压器等。用于电压转换、信号隔离和能量传输。",
+          "SW": "开关：包括按钮、拨码、轻触、滑动、DIP等形式，用于手动或自动控制电路通断。",
+          "X": "晶体振荡器：如石英晶体、有源振荡器、谐振器等，用于产生稳定时钟源和系统频率。",
+          "Z": "齐纳二极管：工作于反向击穿区，用于电压稳压、浪涌抑制与电压钳位。",
+          "P": "焊盘：包括功能引出焊盘、跳线焊盘、编程接口焊盘，用于器件连接、功能配置或调试接入。",
+          "FB": "磁珠：包括贴片磁珠、穿心磁珠等，用于高频噪声抑制、电源滤波，是EMI对策的常用器件。",
+          "JK": "插座类连接器：如RJ45、USB、DC口等外接接口，常用于信号、数据、供电模块的可拔插对接。",
+          "GVI": "测试点：用于调试阶段的地线、电压、电流测量引出点，便于探针测试或自动化检测。",
+          "LD": "发光二极管（LED）：包括双色LED、高亮LED、红外LED等，用于状态显示、报警、照明或通信。",
+          "CN": "接插件：包含板间连接器、IDC端子、航空插头等，主要用于设备间模块互联。",
+          "JP": "跳线/排针：用于设置功能、电平选择、模式切换等，通过跳帽或焊接方式配置。",
+          "BT": "电池：如纽扣电池、锂电池、电池座等，为电路提供主/备用电源，常用于RTC、低功耗设备等。",
+          "TP": "测试点：用于制造和维修过程中的电气测试接点，可用于探针或测试机台接入。",
+          "REG": "电压调节器：包括线性稳压器（LDO）、开关稳压器（DC-DC），用于输出稳定电压，常用于电源模块。",
+          "TB": "接线端子：如弹簧式、螺丝式端子，常用于外部信号、电源接入连接。",
+          "FIL": "滤波器：包括LC网络、有源滤波器、共模滤波器等，用于信号整形、电源滤波与干扰抑制。",
+          "H": "蜂鸣器：包括无源/有源蜂鸣器，用于声音提示、报警功能，广泛用于用户交互与安全提醒。",
+          "TMR": "定时器：用于产生延时、计数、周期脉冲信号等时间逻辑功能，常见于控制IC中。",
+          "M": "电机：包括直流电机、步进电机、无刷电机等，用于驱动旋转/线性运动的执行元件。"
+        }
+        
+    },
+
+    "pcb-component-detection":{
+      "name":"pcb-component-detection",
+      "dataset_type":"DEFECT_FREE",
+      "description":"pcb-component-detection是一个pcb电路板图像，共包含800张测试图像。数据集中覆盖4类典型元件类型：电阻、变压器、电容、三极管。所有图像均来源于真实生产线，具备高分辨率与工业级图像质量。",
+      "map": {
+          "0": "Resistor",
+          "1": "Transformer",
+          "2": "Capacitor",
+          "3": "Transistor"
+        },
+        "map_type": {
+          "Resistor": "电阻",
+          "Transformer": "变压器",
+          "Capacitor": "电容",
+          "Transistor": "三极管"
+        },
+        "map_type_english":{
+          "R": "Resistor",
+          "T": "Transformer",
+          "C": "Capacitor",
+          "Q": "Transistor"
+        },
+        "describe_english":{
+          "R": "Resistors: including precision resistors, thermistors (NTC/PTC), variable resistors (potentiometers), network resistors (arrays), damping resistors, etc. Used for current limiting, voltage division, signal adjustment, etc., they are the most basic passive components in circuits.",
+          "T": "Transformers: such as power frequency transformers, power transformers, pulse transformers, etc. Used for voltage conversion, signal isolation, and energy transmission.",
+          "C": "Capacitors: including ceramic capacitors, electrolytic capacitors, bypass capacitors, grounding capacitors, surface mount capacitors, etc. Widely used for filtering, coupling, decoupling, charge storage, and power supply stabilization.",
+          "Q": "Transistors: including bipolar junction transistors (BJTs), field-effect transistors (MOSFETs), insulated gate bipolar transistors (IGBTs), driver transistors, etc. Used for current amplification, switching, load driving, and power conversion."
+        },
+      "describe":{
+        "R": "电阻：包括精密电阻、热敏电阻（NTC/PTC）、可调电阻（电位器）、网络电阻（排阻）、阻尼电阻等。用于电流限制、电压分压、信号调节等，是电路最基础的被动器件。",
+        "T": "变压器：如工频、电源变压器、脉冲变压器等。用于电压转换、信号隔离和能量传输。",
+        "C": "电容：包括陶瓷电容、电解电容、旁路电容、接地电容、贴片电容等。广泛用于滤波、耦合、去耦、电荷存储和电源稳定。",
+        "Q": "三极管：包括双极型晶体管（BJT）、场效应晶体管（MOSFET）、绝缘栅双极晶体管（IGBT）、驱动晶体管等。用于电流放大、开关、负载驱动、电源转换。"
+      }
+    }
+}

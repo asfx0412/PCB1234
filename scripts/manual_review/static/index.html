@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UniPCB VQA 人工筛查</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>UniPCB VQA 人工筛查</h1>
+        <p id="datasetLine">加载中...</p>
+      </div>
+      <div class="reviewerBox">
+        <label for="reviewerInput">审核人</label>
+        <input id="reviewerInput" type="text" autocomplete="off" />
+        <button id="switchReviewerBtn" type="button">切换</button>
+      </div>
+      <div class="summary" id="summary"></div>
+    </header>
+
+    <main class="layout">
+      <nav class="recordPanel">
+        <div class="jumpRow">
+          <input id="recordInput" type="number" min="1" value="1" />
+          <button id="jumpRecordBtn" type="button">跳转</button>
+        </div>
+        <div class="legend">
+          <span><i class="dot unreviewed"></i>未审</span>
+          <span><i class="dot partial"></i>部分</span>
+          <span><i class="dot complete"></i>完成</span>
+          <span><i class="dot problem"></i>问题</span>
+        </div>
+        <div class="pageRow">
+          <button id="prevPageBtn" type="button">上一页</button>
+          <span id="recordPageText"></span>
+          <button id="nextPageBtn" type="button">下一页</button>
+        </div>
+        <div class="recordGrid" id="recordGrid"></div>
+      </nav>
+
+      <section class="viewer">
+        <div class="imageTabs" id="imageTabs"></div>
+        <div class="imageStage" id="imageStage">
+          <div class="imageCanvas" id="imageCanvas">
+            <img id="mainImage" alt="PCB review target" />
+            <svg id="overlay" aria-hidden="true"></svg>
+          </div>
+        </div>
+        <div class="zoomHint" id="zoomHint">默认按原始分辨率显示，点击图像切换：原始尺寸 / 适应窗口 / 2倍</div>
+      </section>
+
+      <aside class="reviewPanel">
+        <div class="progressRow">
+          <button id="prevBtn" type="button">上一题</button>
+          <div class="progressText" id="progressText"></div>
+          <button id="nextBtn" type="button">下一题</button>
+        </div>
+
+        <div class="qaList" id="qaList"></div>
+
+        <section class="qaDetail">
+          <div class="typeLine" id="typeLine"></div>
+          <h2 id="questionText"></h2>
+          <div class="answerBlock">
+            <label>正确答案</label>
+            <pre id="correctOption"></pre>
+          </div>
+          <div class="answerBlock" id="optionsBlock">
+            <label>干扰选项</label>
+            <div id="optionsList"></div>
+          </div>
+          <div class="answerBlock" id="boxesBlock">
+            <label>BBox 标注</label>
+            <div id="boxesList"></div>
+          </div>
+        </section>
+
+        <section class="decision">
+          <label class="fieldLabel" for="noteInput">问题说明</label>
+          <textarea id="noteInput" rows="5" placeholder="如果存在问题，请写明：答案错误、干扰项问题、bbox 不准、类别不对等"></textarea>
+          <div class="decisionButtons">
+            <button id="problemBtn" type="button" class="problem">存在问题</button>
+            <button id="okBtn" type="button" class="ok">无问题并进入下一题</button>
+          </div>
+          <button id="clearBtn" type="button" class="ghost">清除本题审核状态</button>
+          <div id="statusLine" class="statusLine"></div>
+        </section>
+      </aside>
+    </main>
+
+    <script src="/static/app_review.js"></script>
+  </body>
+</html>

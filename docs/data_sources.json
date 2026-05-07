@@ -1,0 +1,82 @@
+[
+  {
+    "unipcb_folder": "PCBA",
+    "upstream_source": "PCBA-DET",
+    "url": "https://github.com/ismh16/PCBA-Dataset",
+    "terms": "Research use",
+    "used_samples": 873,
+    "used_image_refs": 873
+  },
+  {
+    "unipcb_folder": "PCB-electric-resistance-Dataset_nodefect",
+    "upstream_source": "PCB Resistor Defect Dataset",
+    "url": "https://github.com/leiruoshan/PCB-Resistor-Defect-Dataset",
+    "terms": "Research use",
+    "used_samples": 960,
+    "used_image_refs": 960
+  },
+  {
+    "unipcb_folder": "FPIC",
+    "upstream_source": "FICS PCB Image Collection / FPIC",
+    "url": "https://physicaldb.ece.ufl.edu/index.php/fics-pcb-image-collection-fpic/",
+    "terms": "Registered access",
+    "used_samples": 943,
+    "used_image_refs": 943
+  },
+  {
+    "unipcb_folder": "Dataset-PCB-CNN",
+    "upstream_source": "Dataset-PCB",
+    "url": "https://github.com/asrf001/DatasetPCB/tree/master",
+    "terms": "Research use",
+    "used_samples": 325,
+    "used_image_refs": 325
+  },
+  {
+    "unipcb_folder": "AoI",
+    "upstream_source": "PCB-AoI",
+    "url": "https://www.kaggle.com/datasets/kubeedgeianvs/pcb-aoi/data",
+    "terms": "Apache-2.0",
+    "used_samples": 630,
+    "used_image_refs": 630
+  },
+  {
+    "unipcb_folder": "DeepPCB",
+    "upstream_source": "DeepPCB",
+    "url": "https://github.com/tangsanli5201/DeepPCB",
+    "terms": "Research use",
+    "used_samples": 398,
+    "used_image_refs": 796
+  },
+  {
+    "unipcb_folder": "PCB-Defect-Detection-using-Image-Registration-master",
+    "upstream_source": "PCB Defect Detection using Image Registration",
+    "url": "https://github.com/vihangp/PCB-Defect-Detection-using-Image-Registration/tree/master",
+    "terms": "Research use",
+    "used_samples": 28,
+    "used_image_refs": 56
+  },
+  {
+    "unipcb_folder": "VisA",
+    "upstream_source": "VisA / Spot-the-Difference industrial anomaly data",
+    "url": "https://github.com/amazon-science/spot-diff",
+    "terms": "CC BY 4.0",
+    "used_samples": 398,
+    "used_image_refs": 796
+  },
+  {
+    "unipcb_folder": "solder-joint-dataset-main",
+    "upstream_source": "Solder Joint Dataset",
+    "url": "https://github.com/furkanulger/solder-joint-dataset?tab=readme-ov-file",
+    "terms": "Research use",
+    "used_samples": 381,
+    "used_image_refs": 381
+  },
+  {
+    "unipcb_folder": "pcb-component-detection",
+    "upstream_source": "PCB Component Detection",
+    "url": "https://datasetninja.com/pcb-component-detection",
+    "terms": "CC0 1.0",
+    "used_samples": 800,
+    "used_image_refs": 800
+  }
+]

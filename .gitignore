@@ -1,0 +1,44 @@
+# Python/runtime artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local credentials and machine-specific configuration
+.env
+*.env
+auth.json
+*token*
+*secret*
+*key*
+
+# Large or generated research artifacts
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.pdf
+
+# Dataset payloads are hosted outside GitHub.
+# Keep README/metadata files under these folders tracked with force-add if needed.
+data/benchmark/raw/**
+data/benchmark/results/**
+
+# Model checkpoints are hosted outside GitHub.
+model_weights/**
+checkpoints/**
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# Local release/package staging
+release/
+dist/
+downloads/
