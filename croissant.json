@@ -1,0 +1,337 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "dct": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "sc": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "data": "cr:data",
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@id"
+    },
+    "distribution": "sc:distribution",
+    "equivalentProperty": {
+      "@id": "cr:equivalentProperty",
+      "@type": "@id"
+    },
+    "examples": "cr:examples",
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileObject": "cr:fileObject",
+    "fileProperty": "cr:fileProperty",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "@id": "https://github.com/asfx0412/UniPCB",
+  "dct:conformsTo": [
+    "http://mlcommons.org/croissant/1.0",
+    "http://mlcommons.org/croissant/RAI/1.0"
+  ],
+  "name": "UniPCB",
+  "description": "UniPCB is a unified bilingual vision-language benchmark for open-ended printed circuit board quality inspection. It combines PCB inspection imagery with multi-turn visual question answering annotations covering defect recognition, component understanding, spatial grounding, counting, localization, and inspection-oriented analysis.",
+  "url": "https://github.com/asfx0412/UniPCB",
+  "license": "https://spdx.org/licenses/NOASSERTION.html",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Anonymous Authors"
+  },
+  "publisher": {
+    "@type": "sc:Organization",
+    "name": "Anonymous Authors"
+  },
+  "dateCreated": "2026-04-26",
+  "datePublished": "2026-05-13",
+  "dateModified": "2026-05-13",
+  "version": "1.0.0",
+  "keywords": [
+    "printed circuit board",
+    "PCB inspection",
+    "visual question answering",
+    "vision-language benchmark",
+    "defect detection",
+    "component understanding",
+    "bilingual dataset"
+  ],
+  "inLanguage": [
+    "en",
+    "zh"
+  ],
+  "isLiveDataset": false,
+  "citeAs": "Citation information will be added after release.",
+  "rai:dataCollection": "UniPCB was constructed by collecting and standardizing PCB inspection data from multiple public or project-provided PCB-related sources, then mapping heterogeneous defect and component information into a unified inspection schema. The released benchmark contains image references and bilingual VQA-style annotations for fully labeled, weakly labeled, and unlabeled inspection settings.",
+  "rai:dataCollectionType": [
+    "Secondary Data analysis",
+    "Manual Human Curator",
+    "Software Collection"
+  ],
+  "rai:dataCollectionRawData": "Raw images are stored under data/benchmark/raw/ and organized by source folder: PCBA, PCB-electric-resistance-Dataset_nodefect, FPIC, Dataset-PCB-CNN, AoI, DeepPCB, PCB-Defect-Detection-using-Image-Registration-master, VisA, solder-joint-dataset-main, and pcb-component-detection. The annotation package is data/benchmark/generated/generate_vqa_bilingual_test/all_vqa_data_bilingual_20260426_190307.json.",
+  "rai:dataCollectionMissingData": "Each benchmark record is expected to contain conversation, images, image_size, dataset, dataset_type, and language fields. Image paths should be validated with scripts/dataset/validate_paths.py before release; records whose referenced images are missing should not be used for evaluation.",
+  "rai:dataPreprocessingProtocol": [
+    "Repository-relative image paths were normalized under data/benchmark/raw/.",
+    "Heterogeneous source labels were mapped into a shared taxonomy of defect and component concepts.",
+    "Benchmark records were grouped into P1 fully labeled, P2 weakly labeled, and P3 unlabeled scenario settings.",
+    "Questions and answers were packaged as bilingual, multi-turn VQA conversations."
+  ],
+  "rai:dataAnnotationProtocol": "Annotations are released as conversations. Each conversation item includes a question, a correct_option answer, and a task type. Closed-ended questions additionally include options and correct_answer_letter. The benchmark contains 5,736 samples, 6,560 unique image references, and 23,308 QA pairs across 14 inspection subtasks.",
+  "rai:dataAnnotationPlatform": [
+    "Project-specific benchmark generation and review scripts under scripts/benchmark_generation and scripts/manual_review"
+  ],
+  "rai:dataAnnotationAnalysis": [
+    "The dataset includes bilingual English and Chinese question-answer pairs.",
+    "Scenario labels distinguish fully labeled, weakly labeled, and unlabeled inspection settings.",
+    "Question types cover defect description, analysis, detection, classification, counting, location, coordinates, component description, component type, component counting, component location, and component coordinates."
+  ],
+  "rai:annotationsPerItem": "Each sample contains one or more conversation items; the current package has 23,308 QA pairs over 5,736 samples.",
+  "rai:machineAnnotationTools": [
+    "Project-specific Python scripts in the UniPCB repository"
+  ],
+  "rai:annotatorDemographics": "No personal demographic attributes of annotators are included in the released benchmark metadata.",
+  "rai:personalSensitiveInformation": [
+    "The benchmark is focused on PCB imagery and inspection annotations. It is not intended to contain human subjects or personal sensitive information.",
+    "Users should still inspect upstream source data and metadata before redistribution to confirm that no sensitive information is present."
+  ],
+  "rai:dataUseCases": [
+    "Benchmarking and evaluating vision-language models for PCB quality inspection.",
+    "Developing PCB inspection VQA systems for defect recognition, component understanding, spatial grounding, counting, and localization.",
+    "Research on bilingual industrial visual question answering."
+  ],
+  "rai:dataLimitations": [
+    "The dataset is an inspection benchmark and should not be treated as a complete representation of all PCB designs, manufacturing processes, defect modes, or deployment environments.",
+    "Performance measured on this benchmark may not transfer directly to production inspection lines without additional validation.",
+    "The dataset combines multiple sources whose original licensing and redistribution terms must be respected before public release.",
+    "The current Croissant license field is set to NOASSERTION because a final project-level dataset license was not present in the repository."
+  ],
+  "rai:dataBiases": [
+    "Source datasets may be imbalanced across PCB types, defect categories, component categories, image acquisition conditions, and languages.",
+    "The benchmark contains more samples from some source folders than others, so aggregate metrics should be interpreted together with source-level and scenario-level breakdowns."
+  ],
+  "rai:dataSocialImpact": "UniPCB is intended to support reproducible research on PCB quality inspection. Potential positive impacts include improved inspection automation and more transparent model evaluation. Potential risks include over-reliance on benchmark scores without production validation or insufficient attention to upstream dataset licenses.",
+  "rai:hasSyntheticData": false,
+  "rai:dataReleaseMaintenancePlan": "The benchmark is released as a static snapshot with version 1.0.0. Future updates should increment the version and update file checksums, record counts, source documentation, and this Croissant metadata file.",
+  "prov:wasDerivedFrom": [
+    "PCBA",
+    "PCB-electric-resistance-Dataset_nodefect",
+    "FPIC",
+    "Dataset-PCB-CNN",
+    "AoI",
+    "DeepPCB",
+    "PCB-Defect-Detection-using-Image-Registration-master",
+    "VisA",
+    "solder-joint-dataset-main",
+    "pcb-component-detection"
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": "prov:Activity",
+      "name": "UniPCB benchmark construction",
+      "description": "Raw PCB inspection sources were reorganized under data/benchmark/raw/, heterogeneous labels were mapped into a unified defect and component taxonomy, bilingual VQA conversations were generated, and image references were validated with scripts/dataset/validate_paths.py."
+    }
+  ],
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "benchmark_annotations_json",
+      "name": "all_vqa_data_bilingual_20260426_190307.json",
+      "description": "Main UniPCB bilingual VQA annotation file.",
+      "contentUrl": "https://raw.githubusercontent.com/asfx0412/UniPCB/main/data/benchmark/generated/generate_vqa_bilingual_test/all_vqa_data_bilingual_20260426_190307.json",
+      "sameAs": "data/benchmark/generated/generate_vqa_bilingual_test/all_vqa_data_bilingual_20260426_190307.json",
+      "encodingFormat": "application/json",
+      "contentSize": "12763669 B",
+      "sha256": "582aab0e7849d0b5f73fcb711564fb257e56ba7cfd5318a36fd79131be6dadc8"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "benchmark_raw_images",
+      "name": "UniPCB raw image files",
+      "description": "Raw PCB images referenced by the benchmark annotation JSON.",
+      "encodingFormat": [
+        "image/jpeg",
+        "image/png",
+        "image/bmp"
+      ],
+      "includes": [
+        "data/benchmark/raw/**/*.jpg",
+        "data/benchmark/raw/**/*.jpeg",
+        "data/benchmark/raw/**/*.png",
+        "data/benchmark/raw/**/*.bmp"
+      ]
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "samples",
+      "name": "UniPCB VQA samples",
+      "description": "One record per PCB inspection VQA sample. The current snapshot contains 5,736 records.",
+      "key": {
+        "@id": "samples/images"
+      },
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "samples/images",
+          "name": "images",
+          "description": "Repository-relative image paths used by this sample.",
+          "dataType": "sc:Text",
+          "repeated": true,
+          "source": {
+            "fileObject": {
+              "@id": "benchmark_annotations_json"
+            },
+            "extract": {
+              "jsonPath": "$[*].images"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/image_size",
+          "name": "image_size",
+          "description": "Image width and height recorded for the sample.",
+          "dataType": "sc:Integer",
+          "repeated": true,
+          "source": {
+            "fileObject": {
+              "@id": "benchmark_annotations_json"
+            },
+            "extract": {
+              "jsonPath": "$[*].image_size"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/dataset",
+          "name": "dataset",
+          "description": "Source dataset folder name.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "benchmark_annotations_json"
+            },
+            "extract": {
+              "jsonPath": "$[*].dataset"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/dataset_type",
+          "name": "dataset_type",
+          "description": "Inspection scenario: P1 fully labeled, P2 weakly labeled, or P3 unlabeled.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "benchmark_annotations_json"
+            },
+            "extract": {
+              "jsonPath": "$[*].dataset_type"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/language",
+          "name": "language",
+          "description": "Language code for the question-answer content.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "benchmark_annotations_json"
+            },
+            "extract": {
+              "jsonPath": "$[*].language"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/conversation",
+          "name": "conversation",
+          "description": "Multi-turn VQA conversation items for the sample.",
+          "dataType": [
+            "cr:RecordSet",
+            "cr:Label"
+          ],
+          "repeated": true,
+          "source": {
+            "fileObject": {
+              "@id": "benchmark_annotations_json"
+            },
+            "extract": {
+              "jsonPath": "$[*].conversation"
+            }
+          },
+          "subField": [
+            {
+              "@type": "cr:Field",
+              "@id": "samples/conversation/question",
+              "name": "question",
+              "description": "Question prompt.",
+              "dataType": "sc:Text"
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "samples/conversation/correct_option",
+              "name": "correct_option",
+              "description": "Reference answer.",
+              "dataType": [
+                "sc:Text",
+                "cr:Label"
+              ]
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "samples/conversation/type",
+              "name": "type",
+              "description": "Inspection subtask type.",
+              "dataType": "sc:Text"
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "samples/conversation/options",
+              "name": "options",
+              "description": "Multiple-choice options for closed-ended questions, when present.",
+              "dataType": "sc:Text",
+              "repeated": true
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "samples/conversation/correct_answer_letter",
+              "name": "correct_answer_letter",
+              "description": "Correct multiple-choice answer letter, when present.",
+              "dataType": [
+                "sc:Text",
+                "cr:Label"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
