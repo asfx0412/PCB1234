@@ -1,3 +1,5 @@
+
+
 # UniPCB: A Unified Vision-Language Benchmark for PCB Quality Inspection
 
 [![UniPCB](https://img.shields.io/badge/Dataset-UniPCB-blue)]()
@@ -46,7 +48,7 @@ The UniPCB benchmark contains:
 ### Environment Setup
 ```bash
 # Clone repository
-git clone https://github.com/your-username/UniPCB.git
+git clone https://github.com/fuxiangSun/UniPCB.git
 cd UniPCB
 
 # Install dependencies
